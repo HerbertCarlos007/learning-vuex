@@ -2,6 +2,8 @@
     <div class="card">
         {{ product.name }} - {{ product.price }}
         <button @click="addProduct()">Adicionar</button>
+        
+        <button @click="removeProduct()">Remover</button>
     </div>
 </template>
 
@@ -15,6 +17,10 @@
         methods: {
             addProduct() {
                 this.$store.commit('addProduct', this.product)
+            },
+            
+            removeProduct() {
+                this.$store.commit('removeProduct', this.product.id)
             }
         }
     }

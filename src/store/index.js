@@ -38,7 +38,12 @@ export default createStore({
         
         addProduct(state, data) {
             state.cart.push(data)
-        }
+        },
+        
+        removeProduct(state, id) {
+            const index = state.cart.findIndex(obj => obj.id === id)
+            state.cart.splice(index, 1)
+        },
     },
 
     actions: {
